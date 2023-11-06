@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+  height: 100vh;
+}
+
+.app.dark {
+  height: 100vh;
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+
+.app.light {
+  height: 100vh;
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+.weather{
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  align-items: center;
+  padding: 5px;
+
+}
+.weather-first{
+  display: flex;
+  justify-content: space-evenly;
+  border: 3px solid black;
+  align-items: center;
+  padding: 5px;
+  background-color: grey;
+}
+
+.option{
+  padding: 5px;
+  margin: 5px;
+}
+img{
+  width: 5%;
+  height: 5%;
+}
