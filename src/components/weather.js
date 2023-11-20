@@ -9,7 +9,7 @@ function Weather() {
   const [forecastData, setForecastData] = useState([]);
 
   useEffect(() => {
-    axios(`https://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&lang=tr&units=metric&appid=f5fea04b50574fd876eb0cb8f961c4bc`)
+    axios(`https://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&lang=tr&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
       .then((res) => {
         const forecastList = res.data.list;
         const groupedForecasts = groupForecastsByDay(forecastList);
