@@ -7,7 +7,7 @@ function Header() {
   return (
     <div>
           Temayı Değiştir:
-          <button className='btn' onClick={()=> setTheme(theme === "light" ? "dark":"light")}>{theme == "dark" ? <MdLightMode /> :<MdDarkMode /> }</button>
+          <button className='btn' onClick={()=> setTheme(theme === "light" ? "dark":"light")}>{theme === "dark" ? <MdLightMode /> :<MdDarkMode /> }</button>
     </div>
   )
 };
