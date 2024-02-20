@@ -44,9 +44,10 @@ function Weather() {
   };
 
   const getLastForecastOfGroup = (group) => {
+    let lastForecast = group[group.length-1];
     let minTemp = group[0].main.temp_min;
     let maxTemp = group[0].main.temp_max;
-    let lastForecast = group[0];
+    
   
     group.forEach((forecast) => {
       if (forecast.main.temp_min < minTemp) {
@@ -55,7 +56,7 @@ function Weather() {
       if (forecast.main.temp_max > maxTemp) {
         maxTemp = forecast.main.temp_max;
       }
-      lastForecast = forecast;
+      
     });
   
     return { ...lastForecast, main: { ...lastForecast.main, temp_min: minTemp, temp_max: maxTemp } };
@@ -63,7 +64,7 @@ function Weather() {
 
   return (
     <div>
-      <h1>Weather</h1>
+      <h1>Weather App</h1>
       <select value={selectedCity} onChange={handleCityChange} className='option'>
         {cities.map((city) => (
           <option key={city} value={city}>
@@ -73,13 +74,13 @@ function Weather() {
       </select>
       
       {forecastData.map((forecast, index) => (
-        <div key={index} className={index === 0 ?  "weather-first" : "weather"  }>
+        <div key={index} className={index === 0 ?  "weather-first blok" : "weather blok"  }>
           <h2>{new Date(forecast.dt_txt).toDateString()}</h2>
           {forecast.weather[0].icon && (
             <img src={`http://openweathermap.org/img/w/${forecast.weather[0].icon}.png`} alt="Weather Icon" />
           )}
-          <p>Min Temperature: {forecast.main.temp_min}°</p>
-          <p>Max Temperature: {forecast.main.temp_max}°</p>
+          <p>Min Temperature: {Math.round(forecast.main.temp_min)}°</p>
+          <p>Max Temperature: {Math.round(forecast.main.temp_max)}°</p>
           <p>Hava {forecast.weather[0].description}</p>
         </div>
       ))}

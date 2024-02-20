@@ -1,10 +1,17 @@
 .App {
   text-align: center;
-  height: 100vh;
+}
+.btn{
+  width: 50px;
+  height: 50px;
+  font-size: larger;
+  margin: 10px;
+  background-color: lightgray;
+  border-radius: 40%;
+  cursor: pointer;
 }
 
 .app.dark {
-  height: 100vh;
   background-color: black;
   text-align: center;
   color: white;
@@ -16,6 +23,21 @@
   background-color: white;
   color: black;
 }
+
+.blok{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+img{
+  min-width: 100px;
+  min-height: 50px;
+
+}
+
 
 .weather{
   display: flex;

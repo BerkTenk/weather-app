@@ -8,7 +8,7 @@ function Body() {
     <div>
         <div className={`app ${theme }`}>
     <Header/>
-    <hr/>
+    
     <Weather/>
     
     </div>
